@@ -4,7 +4,7 @@ import math
 import glob
 from tqdm import tqdm
 from transforms import val_transform, val_transform_cuda, train_transform, train_transform_cuda
-from dataset import get_train_val_test_Dataloaders
+from OASIS_dataset import get_train_val_test_Dataloaders
 from model.HighResNet.highresnet import HighResNet
 from model.UNet.unet import UNet3D
 from config import EvaluateParams, TrainParams
