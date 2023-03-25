@@ -75,9 +75,9 @@ def test_model(model):
 
     ret = blend_images(image=sample['image'][0], label=target[0], alpha=0.5, cmap="hsv", rescale_arrays=False)
     
-    for i in range(5, 7):
+    for i in range(60,68):
         # plot the slice 50 - 100 of image, label and blend result
-        slice_index = 3 * i
+        slice_index = 1 * i
         plt.figure("blend image and label", (12, 4))
         plt.subplot(1, 3, 1)
         plt.title(f"image slice {slice_index}")

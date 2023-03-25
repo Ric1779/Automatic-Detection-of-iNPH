@@ -53,7 +53,7 @@ def createHeatmap(input_image, coord):
     for x in range(ac[0]-radius, ac[0]+radius+1):
         for y in range(ac[1]-radius, ac[1]+radius+1):
             for z in range(ac[2]-radius, ac[2]+radius+1):  
-                deb = radius - abs(ac[0]-x) - abs(ac[1]-y) - abs(ac[2]-z) 
+                deb = radius - np.sqrt(np.power(ac[0]-x,2) + np.power(ac[1]-y,2) + np.power(ac[2]-z,2)) 
                 if (deb)>=0:
                     maskimage[x,y,z] = 1
     
@@ -61,11 +61,11 @@ def createHeatmap(input_image, coord):
     for x in range(pc[0]-radius, pc[0]+radius+1):
         for y in range(pc[1]-radius, pc[1]+radius+1):
             for z in range(pc[2]-radius, pc[2]+radius+1): 
-                deb = radius - abs(pc[0]-x) - abs(pc[1]-y) - abs(pc[2]-z) 
+                deb = radius - np.sqrt(np.power(pc[0]-x,2) + np.power(pc[1]-y,2) + np.power(pc[2]-z,2))
                 if (deb)>=0: 
                     maskimage[x,y,z] = 1
     
-    return maskimage    
+    return maskimage
 
 class OASISDataset(Dataset):
     
